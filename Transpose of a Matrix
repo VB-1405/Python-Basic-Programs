@@ -1,0 +1,15 @@
+s=[]
+rows, cols = map(int, input().split())
+for i in range(rows):
+  s.append(list(map(int, input().split())))
+print("Original Matrix: ")
+for i in range(rows):
+    for j in range(cols):
+        print(s[i][j],end=" ")
+    print()
+    
+print("Transposed Matrix: ")
+for i in range(rows):
+    for j in range(cols):
+      print(s[j][i],end=" ")
+    print()

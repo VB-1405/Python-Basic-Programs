@@ -1,0 +1,11 @@
+p = int(input("Enter Players Number: \n")) ## input number of Players
+a=[0]*p ##creating a second list to shift the remaining players after each round
+print(a)
+for i in range(p):
+    a[i] = i + 1
+pos = 0
+while (len(a)>1):
+    pos = pos+1
+    pos = pos%len(a)
+    del a[pos]
+print("winner: ", a[0])

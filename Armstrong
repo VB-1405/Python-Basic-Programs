@@ -1,0 +1,10 @@
+n = int(input())
+l = [int(i) for i in str(n)]
+num = []
+for i in l:
+    num.append(i*i*i)
+    s = sum(num)
+if s == n:
+    print("Armstrong")
+else: 
+    print("Not")

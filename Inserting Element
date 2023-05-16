@@ -1,0 +1,15 @@
+l = list(map(int, (input().split(',')))) ##takes input of integers into a list
+k = int(input()) ##takes input of a number
+if (l[-1]<k): ##if last element of list is lesser than the element entered by the user
+  l.append() ##add element to the end of the list
+else: ##if last element of list is greater than the element entered by the user
+  for i in range(len(l)):
+    if(k<l[i]): ##if element entered is less than the current number in the list
+      l.insert(i,k) ##it will insert the entered number to the location
+      break
+for i in range(len(l)):
+  print(l[i], end=" ")
+  
+  ##input : 1,3,5,9,11
+  ## 7
+  ##output: 1 3 5 7 9 11

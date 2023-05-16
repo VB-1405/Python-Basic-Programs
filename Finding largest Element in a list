@@ -1,0 +1,7 @@
+l = list(map(int , input().split())) ##input of integers into a list
+max = l[0] ##assuming largest value in list is the first element
+min = l[-1] ## assuming smallest value is the last element
+for i in range(len(l)):
+  if max<l[0]: 
+    max = l[i]
+print(max)

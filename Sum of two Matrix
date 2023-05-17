@@ -1,0 +1,24 @@
+s=[]
+f = []
+rows, cols = map(int, input().split())
+print("Enter First Matrix")
+for i in range(rows):
+  s.append(list(map(int, input().split())))
+print("Original Matrix: ")
+for i in range(rows):
+    for j in range(cols):
+        print(s[i][j],end=" ")
+    print()
+print("Enter Second Matrix:")
+for i in range(rows):
+    f.append(list(map(int, input().split())))
+print("Second Matrix")
+for i in range(rows):
+    for j in range(cols):
+        print(f[i][j], end=" ")
+    print()
+print("Sum of both Matrix")
+for i in range(rows):
+    for j in range(cols):
+        print(s[i][j]+f[i][j], end=" ")
+    print()

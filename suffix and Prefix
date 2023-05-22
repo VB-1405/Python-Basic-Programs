@@ -1,0 +1,12 @@
+s=input()
+l=len(s)
+k = l//2
+while(k>0):
+  if s[:k] == s[l-k:]:
+    print(s[:k])
+    break
+  k-=1
+print(k)
+
+##sample Input: aabcdaabc
+##Sample Output: aabc 4

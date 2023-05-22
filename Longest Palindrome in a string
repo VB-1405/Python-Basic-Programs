@@ -1,0 +1,16 @@
+s = input()
+o = ""
+t=""
+n = len(s)
+total = 0
+total = (n*(n+1))//2
+for i in range(n):
+  for j in range(i, n):
+    x=s[i:j+1]
+    if(x==x[::-1]):
+      print(x)
+      if(len(x)>len(t)):
+        t=x
+print(t)
+        
+    

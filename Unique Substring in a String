@@ -1,0 +1,19 @@
+s = input()
+o = ""
+t = ""
+max = ""
+n = len(s)
+total = 0
+total = (n*(n+1))//2
+for i in range(n):
+  for j in range(i, n):
+    x=s[i:j+1]
+    if len(x)==len(set(x)):
+      if len(max)<len(x):
+        max = x
+
+print(max)
+
+
+## Input: abcdadcab
+## Output: abcd

@@ -1,0 +1,15 @@
+s = int(input())
+arr = []
+while(s!=0):
+  if s % 2 == 0:
+    s = s//2
+    arr.append(0)
+  else:
+    s = s//2
+    arr.append(1)
+arr.reverse()
+for i in arr:
+  print(i, end='')
+  
+input: 8
+output: 1000

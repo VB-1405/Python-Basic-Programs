@@ -1,0 +1,15 @@
+def f(n):
+  arr = []
+  for i in range(len(n)):
+    if n[i] % 2 == 0:
+      arr.append(n[i])
+      max = arr[0]
+      arr.sort() 
+      return arr[-1]
+l = list(map(int, input().split(',')))
+x = f(l)
+print(x)
+
+
+##input: 21,23,24,32,43
+##output: 32

@@ -1,0 +1,29 @@
+s = input()
+d = int(input())
+B = []
+G = []
+for i in range (len(s)):
+  if s[i]=='B':
+    B.append(i)
+  if s[i]=='G':
+    G.append(i)
+
+b = len(B)
+g = len(G)
+pair = 0
+while len(B)>0 and len(G)>0:
+  if abs(B[0]-G[0])<=d:
+    B.pop(0)
+    G.pop(0)
+    pair += 1
+  elif B[0]<G[0]:
+    B.pop(0)
+  elif B[0]>G[0]:
+    G.pop(0)
+print(pair)
+
+
+## Input: BBBBGGGG 
+          2
+## Output: 2
+  

@@ -1,0 +1,11 @@
+def reverse(n):
+  if n == 0:
+    return
+  print(n%10, end="")
+  reverse(n//10)
+n=int(input())
+reverse(n)
+
+
+## Input: 1234
+## Output: 4321

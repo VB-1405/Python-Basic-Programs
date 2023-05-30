@@ -1,0 +1,30 @@
+moves = int(input())
+n = 0
+s = 0
+e = 0
+w = 0
+for i in range(moves):
+  dir, dis = input().split()
+  dis = int(dis)
+  if dir == "N":
+    n = n+dis
+  elif dir == "S":
+    s = s+dis
+  elif dir == "E":
+    e = e+dis
+  elif dir == "W":
+    w = w+dis
+d = 0
+if n>s:
+  d += n-s
+  print("N", n-s)
+else:
+  d += s-n
+  print("S", s-n)
+if e>w:
+  d += e-w
+  print("E", e-w)
+else:
+  d += w-e
+  print("W", w-e)
+print("Total Distance Travelled: ", d)

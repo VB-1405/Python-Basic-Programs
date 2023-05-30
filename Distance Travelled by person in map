@@ -28,3 +28,28 @@ else:
   d += w-e
   print("W", w-e)
 print("Total Distance Travelled: ", d)
+
+
+
+## Above program is using N, S, E, W as directions
+
+x = 0
+y = 0
+dir = ""
+dis = 0
+moves = int(input())
+for i in range(moves):
+  dir,dis = input().split()
+  dis = int(dis)
+  if dir == "N":
+    x += dis
+  elif dir == "S":
+    x -= dis
+  elif dir == "E":
+    y += dis
+  elif dir == "W":
+    y -= dis
+print(f"Final position: ({x}, {y})")
+
+
+## Above program uses x and y variable

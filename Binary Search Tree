@@ -1,0 +1,95 @@
+class Node: 
+	def __init__(self, data): 
+		self.data = data 
+		self.left = None
+		self.right = None
+class BST:
+    def __init__(self):
+        self.root=None
+        
+    def insert(self,root,data):
+      if root is None:
+        root = Node(data)
+      else:
+        if(data<root.data):
+            if(root.left==None):
+                root.left=Node(data)
+            else:
+                self.insert(root.left,data)
+        else:
+            if(root.right==None):
+                root.right=Node(data)
+            else:
+                self.insert(root.right,data)
+
+    def delete(self,root,key):
+        if(root==None):
+            return root
+        if(key<root.data):
+            root.left =self.delete(root.left,key)
+        elif(key>root.data):
+            root.right =self.delete(root.right,key)
+        else:
+            if(root.left==None):
+                temp = root.right
+                root = None
+                return temp
+            elif(root.right==None):
+                temp = root.left
+                root = None
+                return temp
+            '''temp =self.minimum(root.right)
+            root.data = temp.data
+            root.right =self.delete(root.right ,temp.data)'''
+            temp=self.maximum(root.left)
+            root.data=temp.data
+            root.left=self.delete(root.left,temp.data)
+        return root
+    
+    def minimum(self,root):
+        while(root.left!=None):
+            root=root.left
+        return root
+
+    def maximum(self,root):
+        while(root.right!=None):
+            root=root.right
+        return root
+           
+    def inorder(self,root):
+        if(root!=None):
+            self.inorder(root.left)
+            print(root.data,end=" ")
+            self.inorder(root.right)
+
+    def leaf_nodes(self,root):
+        if(root!=None):
+            if(root.left==None and root.right==None):
+                print(root.data,end=" ")
+            self.leaf_nodes(root.right)
+            self.leaf_nodes(root.left)
+            
+
+    def search(self,root,val):
+        t=0
+        if(root!=None):
+            if(root.data==val):
+                return 1
+            elif(val<root.data):
+                t=self.search(root.left,val)
+            else:
+                t=self.search(root.right,val)
+        return t
+
+if __name__ == '__main__':
+    b=BST()
+    l=list(map(int,input().strip().split()))
+    b.root=Node(l[0])
+    l.pop(0)
+    for i in l:
+           b.insert(b.root,i)
+    b.inorder(b.root)
+    #b.root=b.delete(b.root,int(input()))
+    #b.inorder(b.root)
+    print()
+    b.leaf_nodes(b.root)
